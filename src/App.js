@@ -1,7 +1,14 @@
+import logo from "./assets/logo-green.jpg";
+
 function App() {
   return (
     <div className="App">
-      <h1>Ange's Portfolio v1</h1>
+      <img
+        // resize the image to 100px
+        style={{ width: "100px" }}
+        src={logo}
+        alt="logo"
+      />
     </div>
   );
 }
