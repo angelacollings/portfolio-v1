@@ -1,14 +1,9 @@
-import logo from "./assets/logo-green.jpg";
+import { NavBar } from "./components/NavBar";
 
 function App() {
   return (
     <div className="App">
-      <img
-        // resize the image to 100px
-        style={{ width: "100px" }}
-        src={logo}
-        alt="logo"
-      />
+      <NavBar />
     </div>
   );
 }
