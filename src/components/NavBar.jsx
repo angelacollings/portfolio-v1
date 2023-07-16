@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import logo from "../assets/logo-light-green.png";
+import logo from "../assets/logo-yellow.png";
+import logoLight from "../assets/logo-light-yellow.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-export const NavBar = () => {
+const NavBar = () => {
   const [nav, setNav] = useState(false);
 
   const menuItems = [
@@ -29,9 +30,19 @@ export const NavBar = () => {
   ];
 
   return (
-    <div className="flex justify-between items-center w-full h-20 px-4 text-emerald-500 bg-black fixed">
+    <div className="flex justify-between items-center w-full h-20 px-4 text-yellow-700 bg-black fixed">
       <div>
         <img
+          onMouseOver={(e) =>
+            (e.currentTarget.src = logoLight) &&
+            (e.currentTarget.style.transition = "all 0.5s ease") &&
+            (e.currentTarget.style.transform = "rotate(360deg)")
+          }
+          onMouseOut={(e) =>
+            (e.currentTarget.src = logo) &&
+            (e.currentTarget.style.transform = "rotate(0deg)") &&
+            (e.currentTarget.style.transition = "all 0.5s ease")
+          }
           onClick={() => window.location.replace("/")}
           className="w-14  cursor-pointer"
           src={logo}
@@ -43,7 +54,7 @@ export const NavBar = () => {
         {menuItems.map((item) => (
           <li
             key={item.id}
-            className="inline-block cursor-pointer px-4 py-2 text-xl font-semibold hover:text-emerald-400 hover:scale-125 duration-200"
+            className="inline-block cursor-pointer px-4 py-2 text-xl font-semibold hover:text-yellow-500 hover:scale-125 duration-200"
           >
             {item.name}
           </li>
@@ -55,9 +66,12 @@ export const NavBar = () => {
         className="md:hidden cursor-pointer pr-3 z-10"
       >
         {nav ? (
-          <FaTimes className="text-emerald-500" size={30} />
+          <FaTimes
+            className="text-yellow-700 hover:text-yellow-500"
+            size={30}
+          />
         ) : (
-          <FaBars className="text-emerald-500" size={30} />
+          <FaBars className="text-yellow-700 hover:text-yellow-500" size={30} />
         )}
       </div>
 
@@ -66,7 +80,7 @@ export const NavBar = () => {
           {menuItems.map((item) => (
             <li
               key={item.id}
-              className="inline-block cursor-pointer px-4 py-6 text-4xl hover:text-emerald-400 hover:scale-125 duration-200"
+              className="inline-block cursor-pointer px-4 py-6 text-4xl hover:text-pink-500 hover:scale-125 duration-200"
             >
               {item.name}
             </li>
@@ -76,3 +90,5 @@ export const NavBar = () => {
     </div>
   );
 };
+
+export default NavBar;
