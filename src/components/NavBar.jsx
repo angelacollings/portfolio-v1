@@ -5,6 +5,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
+  console.log(nav);
 
   const menuItems = [
     {
@@ -69,14 +70,24 @@ const NavBar = () => {
           <FaTimes
             className="text-yellow-700 hover:text-yellow-500"
             size={30}
+            alt="menu-exit"
+            data-testid="menu-exit"
           />
         ) : (
-          <FaBars className="text-yellow-700 hover:text-yellow-500" size={30} />
+          <FaBars
+            className="text-yellow-700 hover:text-yellow-500"
+            size={30}
+            alt="menu-bars"
+            data-testid="menu-bars"
+          />
         )}
       </div>
 
       {nav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800">
+        <ul
+          className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800"
+          data-testid="small-menu"
+        >
           {menuItems.map((item) => (
             <li
               key={item.id}
