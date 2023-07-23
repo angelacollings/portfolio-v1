@@ -23,7 +23,7 @@ const Home = () => {
             few personal projects to expand my skill-set in React and Node.js.
           </p>
           <div>
-            <button className="group text-black w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-yellow-700 to-yellow-500 cursor-pointer">
+            <button className="group text-black w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-yellow-700 to-yellow-500 cursor-pointer hover:scale-105 duration-200">
               View Projects
               <span className="group-hover:rotate-[450deg] duration-500 ml-4">
                 <SlArrowRight size={15} data-testid="arrow-right" />
