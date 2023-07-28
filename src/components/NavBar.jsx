@@ -5,7 +5,6 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
-  console.log(nav);
 
   const menuItems = [
     {
@@ -37,15 +36,17 @@ const NavBar = () => {
           onMouseOver={(e) =>
             (e.currentTarget.src = logoLight) &&
             (e.currentTarget.style.transition = "all 0.5s ease") &&
-            (e.currentTarget.style.transform = "rotate(360deg)")
+            (e.currentTarget.style.transform = "rotate(360deg)") &&
+            (e.currentTarget.style.scale = "1.15 1.15")
           }
           onMouseOut={(e) =>
             (e.currentTarget.src = logo) &&
             (e.currentTarget.style.transform = "rotate(0deg)") &&
+            (e.currentTarget.style.scale = "1 1") &&
             (e.currentTarget.style.transition = "all 0.5s ease")
           }
           onClick={() => window.location.replace("/")}
-          className="w-14  cursor-pointer"
+          className="w-14 cursor-pointer"
           src={logo}
           alt="logo"
         />
@@ -64,19 +65,19 @@ const NavBar = () => {
 
       <div
         onClick={() => setNav(!nav)}
-        className="md:hidden cursor-pointer pr-3 z-10"
+        className="md:hidden cursor-pointer pr-4 z-10"
       >
         {nav ? (
           <FaTimes
-            className="text-yellow-700 hover:text-yellow-500"
+            className="text-yellow-700 hover:text-yellow-500 hover:scale-125 duration-200"
             size={30}
             alt="menu-exit"
             data-testid="menu-exit"
           />
         ) : (
           <FaBars
-            className="text-yellow-700 hover:text-yellow-500"
-            size={30}
+            className="text-yellow-700 hover:text-yellow-500 hover:scale-125 duration-200 "
+            size={35}
             alt="menu-bars"
             data-testid="menu-bars"
           />
@@ -91,7 +92,7 @@ const NavBar = () => {
           {menuItems.map((item) => (
             <li
               key={item.id}
-              className="inline-block cursor-pointer px-4 py-6 text-4xl hover:text-pink-500 hover:scale-125 duration-200"
+              className="inline-block cursor-pointer px-4 py-6 text-4xl hover:text-yellow-500 hover:scale-125 duration-200"
             >
               {item.name}
             </li>
