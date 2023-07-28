@@ -5,7 +5,6 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
-  console.log(nav);
 
   const menuItems = [
     {
