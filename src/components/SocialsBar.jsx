@@ -17,18 +17,21 @@ const SocialsBar = () => {
       ),
       href: "https://github.com/angelacollings",
       style: "w-20 px-4 py-2",
+      testId: "github",
     },
     {
       id: 2,
       child: <FiLinkedin size={25} className={iconStyle} />,
       href: "https://www.linkedin.com/in/angelacollings",
       style: "w-20 px-4 py-2",
+      testId: "linkedin",
     },
     {
       id: 3,
       child: <HiOutlineMail size={25} className={iconStyle} />,
       href: "none",
       style: "w-20 px-4 py-2",
+      testId: "email",
     },
     {
       id: 4,
@@ -62,6 +65,7 @@ const SocialsBar = () => {
           <li
             key={link.id}
             className={`flex justify-between items-center ${link.style}`}
+            data-testid={link.testId}
           >
             <a href={link.href} target="_blank" rel="noreferrer">
               {link.child}
