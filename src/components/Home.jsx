@@ -8,14 +8,14 @@ const Home = () => {
       name="home"
       className="h-screen w-full bg-gradient-to-b from-black via-gray-900 to bg-gray-900"
     >
-      <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
+      <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-6 py-20 md:flex-row">
         <div className="flex flex-col justify-center h-full max-w-lg">
           <p className="text-gray-400">Hi, my name is</p>
           <h1 className="text-5xl sm:text-7xl font-bold text-yellow-700 py-3">
             Angela Collings.
           </h1>
-          <p className="text-2xl sm:text-4xl font-bold text-gray-400">
-            I'm a Software Developer.
+          <p className="text-lg sm:text-xl font-bold text-gray-400">
+            Software Developer | Problem Solver | Passionate Learner
           </p>
           <p className=" text-gray-400 text-lg py-8 ">
             I have a passion for problem solving and creating things. Currently
@@ -32,7 +32,7 @@ const Home = () => {
           </div>
         </div>
         <div>
-          <img src={HeroImage} alt="hero" className="mx-auto w-2/3 md:2/3" />
+          <img src={HeroImage} alt="hero" className="mx-auto w-2/3" />
         </div>
       </div>
     </div>
