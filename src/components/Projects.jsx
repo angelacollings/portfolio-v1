@@ -1,7 +1,17 @@
-import React from "react";
 import placeHolder from "../assets/placeholder.png";
 
 const Projects = () => {
+  const projects = [
+    {
+      id: 1,
+      name: "Project 1",
+      image: placeHolder,
+      description: "This is a placeholder for a project",
+      github: "https://github.com",
+      deployed: "https://www.google.com",
+    },
+  ];
+
   return (
     <div
       name="projects"
@@ -14,16 +24,33 @@ const Projects = () => {
           </p>
           <p className="py-6">Check out some of my work here</p>
         </div>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
-          <div className="shadow-md shadow-yellow-600 rounded-lg">
-            <img
-              src={placeHolder}
-              alt="placeholder"
-              className="rounded-md duration-200 hover:scale-105"
-            />
-            <div>{/* <p>Project Name</p> */}</div>
+
+        {
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
+            {projects.map((project) => (
+              <div
+                key={project.id}
+                className="shadow-sm shadow-yellow-600 rounded-lg p-4 bg-gray-800 hover:bg-gray-700 transition duration-200"
+              >
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="rounded-md duration-200 hover:scale-105"
+                />
+                <div className=" text-center text-yellow-600 ">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-yellow-600 hover:text-yellow-500"
+                  >
+                    <h3 className="text-lg font-bold">{project.name}</h3>
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
+        }
       </div>
     </div>
   );
